@@ -1,0 +1,17 @@
+<!-- DESKTOP -->
+<nav>
+    <div class="nav-wreapper">
+        <a href="#">Controladoria</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <div id="nav-mobile" class="right hide-on-med-and-down">
+            {{> nav/menu}}
+        </div>
+    </div>
+</nav>
+<!-- DESKTOP -->
+
+<div class="sidenav" id="mobile-demo">
+    {{> nav/menu}}
+</div>
+<!-- mobile -->
