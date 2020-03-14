@@ -1,1 +1,79 @@
-termo
+<!-- card sobre o projeto -->
+<section class="card z-depth-2">
+    <!-- title -->
+    <div class="card-title center grey darken-3 white-text">
+        <b>
+            Sobre o projeto
+        </b>
+    </div><!-- title -->
+
+    <!-- content -->
+    <div class="card-content">
+        <blockquote>
+            <h5>
+                O alinhamento dos objetivos de uma organização com os indicadores é importante,
+                pois você poderá direcionar os esforços dos gestores para atingirem os objetivos
+                organizacionais.
+                Além disso, o uso adequado das ferramentas de controle gerencial ajuda a organização a ter
+                melhor
+                desempenho.
+            </h5>
+        </blockquote>
+    </div><!-- content -->
+
+    <div class="card-action center">
+        <button class="btn red darken-2">Pesquisadores</button>
+    </div>
+</section><!-- card sobre o projeto -->
+
+<!-- card Iniciar autodiagnóstico  -->
+<section class="card z-depth-2">
+    <!-- title -->
+    <div class="card-title center grey darken-3 white-text">
+        <b>
+            Iniciar autodiagnóstico
+        </b>
+    </div> <!-- title -->
+
+    <!-- content -->
+    <div class="card-content">
+        <blockquote>
+            <h5>
+                O autodiagnóstico dura geralmente em torno de dez minutos,
+                ao final você receberá um feedback indicando pontos de atenção
+                para melhoria dos controles de sua
+                organização.
+            </h5>
+        </blockquote>
+        <blockquote class="yellow">
+            <h5>
+                <strong>Atenção:</strong>
+                Leia o termo de confidencialidade antes de iniciar o autodiagnóstico
+            </h5>
+        </blockquote>
+        <br>
+        <a class="btn red darken-2">Ler termo de confidencialidade</a>
+    </div><!-- content -->
+
+    <div class="card-action center z-depth-2">
+        <!-- collapse -->
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header red darken-3">
+                    <h5 class="center text-white"> Clique aqui se leu o termo e quer iniciar a pesquisa</h5>
+                </div>
+                <div class="collapsible-body">
+                    <button class="btn red darken-3"> <i class="material-icons">assignment</i> Começar
+                        Questionário</button>
+                </div>
+            </li>
+        </ul><!-- collapse -->
+    </div>
+</section><!-- card Iniciar autodiagnóstico  -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+</script>
