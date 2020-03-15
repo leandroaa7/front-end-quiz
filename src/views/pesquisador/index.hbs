@@ -1,0 +1,99 @@
+{{> nav}}
+
+<div class="container ">
+
+    <section class="section lighten-3 center">
+        <h4>Professores</h4>
+    </section>
+
+    <!-- section alerta -->
+    <section>
+        <blockquote class=" section yellow">
+            <h5><b>Atenção:</b> Clique no professor caso haja modificações</h5>
+        </blockquote>
+    </section><!-- section alerta -->
+
+    <section class="right-align">
+        <a id="new-professor" class="btn indigo darken-3" data-toggle="adm-professor">Cadastrar
+            novo professor</a>
+    </section>
+
+    <!-- section professor -->
+    <section class="section">
+        <div class="card z-depth-2">
+            <div class="card-title center grey darken-3 white-text">Professores</div>
+            <div class="card-content">
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Professor</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Leandro</td>
+                            <td>Leandro Alves Alexandre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section><!-- section professor -->
+
+    <!-- section adm professor -->
+    <section class="section" id="adm-professor">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <form action="" class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="nome">Nome do Professor</label>
+                                <input type="text" id="nome" placeholder="placeholder">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="email" id="email" placeholder="email do professor">
+                                <label for="email">E-Email do professor</label>
+                            </div>
+                        </div>
+                        <div class="right-align">
+                            <button id="excluir-btn" class="btn red darken-3">Excluir</button>
+                            <button id="alterar-btn" class="btn yellow accent-3" style="color:black">Alterar</button>
+                            <button id="cadastrar-btn" class="btn indigo darken-3">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- section professor -->
+
+</div>
+
+<script>
+    class Professor {
+        constructor() {
+            this.form = document.getElementById('adm-professor');
+            this.btnExcluir = document.getElementById("excluir-btn");
+            this.btnAlterar = document.getElementById("alterar-btn");
+            this.btnCadastrar = document.getElementById("cadastrar-btn");
+        }
+
+        goToForm = () => {
+            this.btnAlterar.classList.add('hide');
+            this.btnExcluir.classList.add('hide');
+            window.scroll(this.form.offsetLeft, this.form.offsetTop);
+        }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        let professor = new Professor();
+
+        document.getElementById('new-professor').addEventListener('click', professor.goToForm);
+    })
+</script>
