@@ -50,20 +50,20 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <label for="nome">Nome do Professor</label>
-                                <input type="text" id="nome" placeholder="placeholder">
+                                <input type="text" id="nome" placeholder="placeholder" required>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="email" id="email" placeholder="email do professor">
+                                <input type="email" id="email" placeholder="email do professor" required>
                                 <label for="email">E-Email do professor</label>
                             </div>
                         </div>
                         <div class="right-align" id="btn-professor">
                             <button id="excluir" class="btn red darken-3">Excluir</button>
                             <button id="alterar" class="btn yellow accent-3" style="color:black">Alterar</button>
-                            <button id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                            <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
                         </div>
                     </form>
                 </div>
@@ -107,9 +107,7 @@
 
         add = (event) => {
             event.preventDefault();
-            console.log('add');
-            console.log(this);
-            console.log(event);
+            return new FormData(event.target)
         }
 
         prepareContainerUpdate = () => {
@@ -221,6 +219,8 @@
         setEvents = () => {
             document.getElementById('new-' + this.nameInstance).addEventListener('click', this.controllerInstance.goToAdd);
             document.getElementById('table-' + this.nameInstance).addEventListener('click', this.controllerInstance.goToUpdate);
+            document.getElementById('form-' + this.nameInstance).addEventListener('submit', this.controllerInstance.add);
+       
         }
     }
 
