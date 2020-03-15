@@ -1,4 +1,6 @@
 const path = require('path');
+const proposal = require('@babel/plugin-proposal-class-properties');
+
 //const webpack = require('webpack');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const moduleParams = {
@@ -9,8 +11,9 @@ const moduleParams = {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    cacheDirectory: true
-                }
+                    cacheDirectory: true,
+                },
+
             }
         }
     ]
