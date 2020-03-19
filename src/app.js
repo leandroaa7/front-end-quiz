@@ -17,9 +17,9 @@ hbs.registerPartials(__dirname + '/views/partials');
 //logs
 app.use(logger('dev'));
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 //static files 
 app.use('/static', express.static(path.join(__dirname, 'public')));
