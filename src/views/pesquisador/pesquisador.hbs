@@ -1,0 +1,53 @@
+{{> nav}}
+
+<div class="container ">
+
+    <section class="section lighten-3 center">
+        <h4>Pesquisadores</h4>
+    </section>
+
+    <!-- section alerta -->
+    <section>
+        <blockquote class=" section yellow">
+            <h5><b>Atenção:</b> Clique no pesquisador caso haja modificações</h5>
+        </blockquote>
+    </section><!-- section alerta -->
+
+    <section class="right-align">
+        <a id="new-pesquisador" class="btn indigo darken-3" data-toggle="container-pesquisador">Cadastrar
+            novo pesquisador</a>
+    </section>
+
+    <!-- section pesquisador -->
+    <section class="section">
+        <div class="card z-depth-2">
+            <div class="card-title center grey darken-3 white-text">Pesquisadores</div>
+            <div class="card-content">
+                <table class="striped" id="table-pesquisador">
+                    <thead>
+                        <tr>
+                            <th>Pesquisador</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="1">
+                            <td>Leandro</td>
+                            <td>leandro@gmail.com</td>
+                        </tr>
+                        <tr id="2">
+                            <td>alves</td>
+                            <td>alves@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section><!-- section pesquisador -->
+
+    {{> container }}
+
+    {{> pesquisador/inputPesquisador}}
+</div>
+
+<script src="/static/js/pesquisador/index.js"></script>

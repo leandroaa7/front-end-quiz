@@ -23,5 +23,12 @@ export default class Form {
         });
     }
 
+    static configForm = () => {
+        let inject = document.getElementById("input-inject");
+        inject.removeAttribute('id');
+        let form = document.getElementsByTagName('form');
+        form[0].insertBefore(inject, form[0].childNodes[0]);
+    }
+
 
 }

@@ -1,0 +1,128 @@
+{{> nav}}
+
+<div class="container ">
+
+    {{!--     <!-- section alerta -->
+    <section>
+        <blockquote class=" section yellow">
+            <h5><b>Atenção:</b> Clique no professor caso haja modificações</h5>
+        </blockquote>
+    </section><!-- section alerta --> --}}
+
+    {{!--     <section class="right-align">
+        <a id="new-professor" class="btn indigo darken-3" data-toggle="container-professor">Cadastrar
+            novo professor</a>
+    </section> --}}
+
+    <!-- section questionario -->
+    <section class="section">
+        <div class="card z-depth-2">
+            <div class="card-title center grey darken-3 white-text">Questões</div>
+            <div class="card-content">
+                <ul class="collapsible">
+                    <li class="z-depth-2">
+                        <div class="collapsible-header  ">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nihil quos dolorum
+                            ut eum repudiandae amet corporis placeat. Quos saepe veritatis similique minima beatae
+                            deleniti, reiciendis nemo adipisci harum nihil?
+                        </div>
+                        <div class="collapsible-body grey lighten-2">
+                            <button class="right-align btn red darken-3">Administrar Questão</button>
+                            <div class="section"></div>
+                            <button class="right-align btn indigo darken-3" id="new-questao">Adicionar
+                                Alternativa</button>
+
+                            <p class="center"><b>Alternativas</b></p>
+
+                            <section class="section">
+                                <blockquote class=" section yellow">
+                                    <h5><b>Atenção:</b> Clique na alternativa caso haja alterações </h5>
+                                </blockquote>
+                            </section><!-- section alerta -->
+
+                            <div class="card">
+                                <div class="card-content">alternativa 1 </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">alternativa 2 </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">alternativa 3 </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <br>
+                    <li class="z-depth-2">
+                        <div class="collapsible-header">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nihil quos dolorum
+                            ut eum repudiandae amet corporis placeat. Quos saepe veritatis similique minima beatae
+                            deleniti, reiciendis nemo adipisci harum nihil?
+                        </div>
+                        <div class="collapsible-body">body</div>
+
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </section><!-- section questionario -->
+
+    <!-- container adm questao -->
+    <section class="section " id="container-questao">
+        <div class="card">
+            <div class="card-content row">
+                <!-- form -->
+                <form action="" id="form-questao" class="col s12">
+                    <input type="hidden" name="id" value="">
+                    <!-- input titulo-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="titulo">Título da alternativa</label>
+                            <input type="text" id="titulo" placeholder="Título da alternativa" name="titulo" value=""
+                                required>
+                        </div>
+                    </div><!-- input titulo-->
+
+                    <!-- input peso-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="number" max="100" min="1" id="peso" name="peso" value=""
+                                placeholder="Peso da alternativa" required>
+                            <label for="peso">Peso da alternativa</label>
+                        </div>
+                    </div><!-- input peso-->
+
+                    <!-- form buttons -->
+                    <div class="right-align" id="btn-questao">
+                        <!-- modal button -->
+                        <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
+                        <!-- modal button -->
+                        <button type="submit" id="alterar" class="btn yellow accent-3"
+                            style="color:black">Alterar</button>
+                        <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                    </div><!-- form buttons -->
+
+                    <br>
+                    <!-- form alert -->
+                    <div class="card hide" id="form-alert">
+                        <div class="card-title center red darken-3 white-text"> Atenção</div>
+                        <div class="card-content center">
+                            <form action="" id="form-alert">
+
+                                <h5>Tem certeza que deseja remover?</h5>
+                                <button type="button" id="form-alert-cancel" class="btn-flat">cancelar</button>
+                                <button type="submit" class="red darken-3 white-text btn-flat">Excluir</button>
+                            </form>
+                        </div>
+                    </div> <!-- form alert -->
+                </form> <!-- form -->
+            </div>
+        </div>
+    </section>
+    <!-- container questao -->
+
+</div>
+
+<script src="/static/js/pesquisador/questionario.js"></script>

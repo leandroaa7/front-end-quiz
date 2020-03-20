@@ -2,20 +2,33 @@
 import Container from "../Container";
 import Table from "../Table";
 import AddEvent from "../AddEvent";
+import Form from "../Form";
 
-class ProfessorController {
+class PesquisadorController {
 
     constructor() {
-        let professorInputsId = ["id", "nome", "email"];
-        this.container = new Container("professor", professorInputsId);
-        this.table = new Table("table-professor");
+        let pesquisadorInputsId = ["id", "nome", "email"];
+        this.container = new Container("pesquisador", pesquisadorInputsId);
+        this.table = new Table("table-pesquisador");
 
     }
 
+    //eventos que devem ser adicionados na DOM, verificar na classe AddEvents
+    getEvents() {
+        return {
+            newEvent: true,
+            tableEvent: true,
+            deleteEvent: true,
+            deleteCancelEvent: true
+        }
+    }
+
+    //nome do controller
     getName = () => {
-        return "professor";
+        return "pesquisador";
     }
 
+    //quando alguém clicar na tabela ir para o formulário com os dados da linha clicada
     goToUpdate = (event) => {
         let action = "/pesquisador/atualizar";
         let method = "POST";
@@ -23,31 +36,35 @@ class ProfessorController {
         this.container.goToUpdate(dataRow, action, method);
     }
 
+    //quando alguém clicar em adicionar um novo elemento ir para o formulário
     goToAdd = () => {
         let action = "/pesquisador/";
         let method = "POST";
         this.container.goToAdd(action, method);
     }
 
-    goToDelete = (event) => {
+    //quando alguém clicar no botão excluir deve aparecer um alerta caso ela tenha certeza
+    goToDelete = () => {
         let action = "/pesquisador/excluir";
         let method = "POST";
         this.container.goToDelete(action, method);
     }
 
-
+    //ir para o formulário de alerta sobre excluir um elemento
     goToDeleteCancel = () => {
         this.container.goToDeleteCancel();
     }
-
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    //config form 
+    Form.configForm();
+
     //start modal
     var elems = document.querySelectorAll('.modal');
     M.Modal.init(elems);
 
-    let professorController = new ProfessorController();
-    new AddEvent(professorController);
+    let pesquisadorController = new PesquisadorController();
+    new AddEvent(pesquisadorController);
 })

@@ -1,0 +1,34 @@
+<!-- container adm -->
+<section class="section " id="container-{{title}}" hidden="">
+    <div class="card">
+        <div class="card-content row">
+            <!-- form -->
+            <form action="" id="form-{{title}}" data-inject="{{title}}" class="col s12">
+                
+                <!-- form buttons -->
+                <div class="right-align" id="btn-{{title}}">
+                    <!-- modal button -->
+                    <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
+                    <!-- modal button -->
+                    <button type="submit" id="alterar" class="btn yellow accent-3" style="color:black">Alterar</button>
+                    <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                </div><!-- form buttons -->
+
+                <br>
+                <!-- form alert -->
+                <div class="card hide" id="form-alert">
+                    <div class="card-title center red darken-3 white-text"> Atenção</div>
+                    <div class="card-content center">
+                        <div action="" id="form-alert">
+
+                            <h5>Tem certeza que deseja remover?</h5>
+                            <button type="button" id="form-alert-cancel" class="btn-flat">cancelar</button>
+                            <button type="submit" class="red darken-3 white-text btn-flat">Excluir</button>
+                        </div>
+                    </div>
+                </div> <!-- form alert -->
+            </form> <!-- form -->
+        </div>
+    </div>
+</section>
+<!-- container adm -->

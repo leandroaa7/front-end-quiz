@@ -6,8 +6,10 @@ export default class Container {
         this.name = name;
         this.container = document.getElementById('container-' + name);
         this.form = new Form(document.getElementById('form-' + name), inputsId);
-        this.buttons = document.getElementById('btn-' + name).children;
         this.formAlert = document.getElementById("form-alert");
+        
+        //buttons form
+        this.buttons = document.getElementById('btn-' + name).children;
         this.btnExcluir = this.buttons["excluir"];
         this.btnAlterar = this.buttons['alterar']
         this.btnCadastrar = this.buttons["cadastrar"];

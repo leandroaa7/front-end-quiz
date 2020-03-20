@@ -1,0 +1,50 @@
+<!-- container adm professor -->
+<section class="section " id="container-professor" hidden="">
+    <div class="card">
+        <div class="card-content row">
+            <!-- form -->
+            <form action="" id="form-professor" class="col s12">
+                <input type="hidden" name="id" value="">
+                <!-- input nome-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="nome">Nome do Professor</label>
+                        <input type="text" id="nome" placeholder="Nome do Professor" name="nome" value="" required>
+                    </div>
+                </div><!-- input nome-->
+
+                <!-- input email-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="email" id="email" name="email" value="" placeholder="email do professor" required>
+                        <label for="email">E-Email do professor</label>
+                    </div>
+                </div><!-- input email-->
+
+                <!-- form buttons -->
+                <div class="right-align" id="btn-professor">
+                    <!-- modal button -->
+                    <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
+                    <!-- modal button -->
+                    <button type="submit" id="alterar" class="btn yellow accent-3" style="color:black">Alterar</button>
+                    <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                </div><!-- form buttons -->
+
+                <br>
+                <!-- form alert -->
+                <div class="card hide" id="form-alert">
+                    <div class="card-title center red darken-3 white-text"> Atenção</div>
+                    <div class="card-content center">
+                        <form action="" id="form-alert">
+
+                            <h5>Tem certeza que deseja remover?</h5>
+                            <button type="button" id="form-alert-cancel" class="btn-flat">cancelar</button>
+                            <button type="submit" class="red darken-3 white-text btn-flat">Excluir</button>
+                        </form>
+                    </div>
+                </div> <!-- form alert -->
+            </form> <!-- form -->
+        </div>
+    </div>
+</section>
+<!-- container professor -->

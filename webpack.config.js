@@ -31,7 +31,8 @@ const scriptsPesquisador = {
     name: "pesquisador",
     mode: "production",
     entry: {
-        index: './src/views-controller/pesquisador/index.js'
+        index: './src/views-controller/pesquisador/index.js',
+        questionario: './src/views-controller/pesquisador/questionario.js'
     },
     output: {
         filename: "[name].js",

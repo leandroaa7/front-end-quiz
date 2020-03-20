@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('pesquisador/index', { title: "Pesquisador" })
+    res.render('pesquisador/pesquisador', { title: "pesquisador" })
 });
 
 router.post('/', (req, res) => {
