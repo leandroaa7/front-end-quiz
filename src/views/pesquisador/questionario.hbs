@@ -34,8 +34,7 @@
             <div class="collapsible-header center questao" id="titulo1">
                 <h5>
                     <b>
-                        titulo da questao
-
+                        Quantos funcionários existem na sua empresa?
                     </b>
                 </h5>
             </div> <!-- collapsible header -->
@@ -61,7 +60,6 @@
 
 
 
-                    <h5 class="center"><b>Alternativas</b></h5>
 
                     <section class="section">
                         <blockquote class=" section yellow">
@@ -70,35 +68,27 @@
                     </section><!-- section alerta -->
 
                     <ul id="alternativas" class="">
-                        <li class="card section center-align alternativa" data-id="1" data-titulo="questao 1"
+                        <h5 class="center"><b>Alternativas</b></h5>
+                        <li class="card section center-align alternativa" data-id="1" data-titulo="até 50 funcionários"
                             data-peso="1">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
-                            cupiditate
-                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi
+                            até 50 funcionários
 
                             <button type="button" style="pointer-events: none;cursor: default;"
                                 class="btn-flat indigo darken-3 white-text">Peso 1</button>
                         </li>
-                        <li class="card section center-align alternativa" data-id="2" data-titulo="questao 12"
+                        <li class="card section center-align alternativa" data-id="2" data-titulo="até 100"
                             data-peso="2">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
-                            cupiditate
-                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+                            até 100
 
                             <button type="button" style="pointer-events: none;cursor: default;"
-                                class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                                class="btn-flat indigo darken-3 white-text">Peso 2</button>
                         </li>
-                        <li class="card section center-align alternativa" data-id="3" data-titulo="questao 13"
+                        <li class="card section center-align alternativa" data-id="3" data-titulo="até 200"
                             data-peso="3">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
-                            cupiditate
-                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+                            até 200
 
                             <button type="button" style="pointer-events: none;cursor: default;"
-                                class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                                class="btn-flat indigo darken-3 white-text">Peso 3</button>
                         </li>
                     </ul>
                 </div><!-- alternativa -->
@@ -137,46 +127,122 @@
                     </div> <!-- form questao -->
 
                     <!-- form alternativa -->
-                    <div>
+                    <div id="form-questao-alternativa">
+                        <h5 class="center">Alternativas</h5>
 
-                        <div class="card-content row" id="form-questao-alternativa">
-                            <button type="submit" id="cadastrar" class="btn indigo darken-3">Adicionar
-                                Alternativa</button>
+                        <!-- alternativa -->
+                        <div class="card section alternativa">
+                            <div class="card-content" id="input-inject">
 
-                            <div class="section">
-                                <div id="input-inject">
-                                    <!-- input titulo-->
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <label for="titulo">Título da alternativa</label>
-                                            <input type="text" id="alternativa-titulo"
-                                                placeholder="Título da alternativa" name="alternativa-titulo" value=""
-                                                required>
-                                        </div>
-                                    </div><!-- input titulo-->
+                                <!-- input titulo-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="titulo">Título da alternativa</label>
+                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
+                                            name="alternativa-titulo" value="" required>
+                                    </div>
+                                </div><!-- input titulo-->
 
-                                    <!-- input peso-->
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input type="number" max="100" min="1" id="alternativa-peso"
-                                                name="alternativa-peso" value="" placeholder="Peso da alternativa"
-                                                required>
-                                            <label for="peso">Peso da alternativa</label>
-                                        </div>
-                                    </div><!-- input peso-->
-                                </div>
-
-                                <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Remover
-                                    Alternativa</button>
-                                <button type="submit" id="cadastrar" class="btn indigo darken-3">Adicionar
-                                    Alternativa</button>
+                                <!-- input peso-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="number" max="100" min="1" id="alternativa-peso"
+                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
+                                        <label for="peso">Peso da alternativa</label>
+                                    </div>
+                                </div><!-- input peso-->
                             </div>
-                        </div>
+
+                            <!-- buttons alternativa -->
+
+                            <button type="button" id="excluir" data-action="excluir"
+                                class="btn red darken-3 modal-trigger">Remover
+                                Alternativa</button>
+                            <!-- buttons alternativa -->
+
+                        </div><!-- alternativa -->
+
+                        <!-- alternativa -->
+                        <div class="card section alternativa">
+                            <div class="card-content" id="input-inject">
+
+                                <!-- input titulo-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="titulo">Título da alternativa</label>
+                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
+                                            name="alternativa-titulo" value="" required>
+                                    </div>
+                                </div><!-- input titulo-->
+
+                                <!-- input peso-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="number" max="100" min="1" id="alternativa-peso"
+                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
+                                        <label for="peso">Peso da alternativa</label>
+                                    </div>
+                                </div><!-- input peso-->
+                            </div>
+
+                            <!-- buttons alternativa -->
+
+                            <button type="button" id="excluir" data-action="excluir"
+                                class="btn red darken-3 modal-trigger">Remover
+                                Alternativa</button>
+                            <!-- buttons alternativa -->
+
+                        </div><!-- alternativa -->
+
+                        <!-- alternativa -->
+                        <div class="card section alternativa">
+                            <div class="card-content" id="input-inject">
+
+                                <!-- input titulo-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="titulo">Título da alternativa</label>
+                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
+                                            name="alternativa-titulo" value="" required>
+                                    </div>
+                                </div><!-- input titulo-->
+
+                                <!-- input peso-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="number" max="100" min="1" id="alternativa-peso"
+                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
+                                        <label for="peso">Peso da alternativa</label>
+                                    </div>
+                                </div><!-- input peso-->
+                            </div>
+
+                            <!-- buttons alternativa -->
+
+                            <button type="button" id="excluir" data-action="excluir"
+                                class="btn red darken-3 modal-trigger">Remover
+                                Alternativa</button>
+                            <!-- buttons alternativa -->
+
+                        </div><!-- alternativa -->
+
+
+
+                        <button type="button" id="cadastrar" data-action="cadastrar"
+                            class="btn indigo darken-3 right">Adicionar
+                            Alternativa</button>
 
                     </div> <!-- form alternativa -->
+                    <br>
+                    <!-- section alerta -->
+                    <section>
+                        <blockquote class=" section yellow">
+                            <h5><b>Atenção:</b> É necessário ter, pelo menos, duas alternativas</h5>
+                        </blockquote>
+                    </section><!-- section alerta -->
 
                     <!-- form buttons -->
-                    <div class="right-align" id="btn-questao">
+                    <div class="right-align card-action" id="btn-questao">
                         <!-- modal button -->
                         <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
                         <!-- modal button -->
@@ -203,7 +269,6 @@
         </div>
     </section>
     <!-- container questao -->
-
 
     <!-- container alternativa -->
     <section class="section " id="container-alternativa" hidden="">

@@ -46,7 +46,6 @@ export default class Questao {
     }
 
 
-
     //alternativa functions 
 
     showFormAlternativa = () => {
@@ -81,6 +80,25 @@ export default class Questao {
         this.alternativaController.goToUpdate(event);
     }
 
+    administrateAlternative = (event) => {
+        let target = event.target;
+        if (target.tagName == "BUTTON") {
+            if (target.dataset.action == "excluir") {
+                this.excludeAlternative(target)
+            } else if (target.dataset.action == "cadastrar") {
+                this.addAlternative(target);
+            }
+        }
+    }
 
+    excludeAlternative = (target) => {
+        let alternative = target.parentNode;
+        let alternativeList = alternative.parentNode;
+        console.log(alternativeList.children)
+        alternativeList.removeChild(alternative);
+    }
 
+    addAlternative = (target) => {
+
+    }
 }

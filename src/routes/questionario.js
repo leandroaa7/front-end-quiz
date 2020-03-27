@@ -6,12 +6,12 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     res.redirect('/questionario/resultado')
 })
 
 router.get('/resultado', (req, res) => {
-    res.send("resultado")
+    res.render('visitante/resposta')
 })
 
 module.exports = router;
