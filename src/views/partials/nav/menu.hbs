@@ -1,4 +1,13 @@
+{{#if login}}
+<ul>
+    <li><a href="/pesquisador/">Pesquisadores</a></li>
+    <li><a href="/pesquisador/questionario">Questões</a></li>
+    <li><a href="/pesquisador/recomendacao">Recomendações</a></li>
+</ul>
+{{else}}
 <ul>
     <li><a href="/termo">Termo</a></li>
-    <li><a href="/login">Login</a></li>
+    <li><a href="/pesquisador">Login</a></li>
 </ul>
+
+{{/if}}

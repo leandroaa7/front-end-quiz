@@ -2,13 +2,28 @@
 
 <div class="container">
 
-    <!-- buttons -->
-    <div class="section">
-        <button class="right-align btn indigo darken-3 alternativa" id="new-questao">
-            Adicionar Questão
-        </button>
-    </div>
-    <!-- buttons -->
+
+
+    <section class="section lighten-3 center">
+        <h4>Questões</h4>
+    </section>
+
+    <!-- section alerta -->
+    <section>
+        <blockquote class=" section yellow">
+            <h5><b>Atenção:</b> Clique na questão para saber mais detalhes</h5>
+        </blockquote>
+    </section><!-- section alerta -->
+
+    <section class="right-align">
+        <!-- buttons -->
+        <div class="section">
+            <button class="right-align btn indigo darken-3 alternativa" id="new-questao">
+                Adicionar Questão
+            </button>
+        </div>
+        <!-- buttons -->
+    </section>
 
     <!-- collapsible -->
     <ul class="collapsible" id="questoes">
@@ -16,8 +31,13 @@
         <li>
 
             <!-- collapsible header -->
-            <div class="collapsible-header questao" id="titulo1">
-                titulo da questao
+            <div class="collapsible-header center questao" id="titulo1">
+                <h5>
+                    <b>
+                        titulo da questao
+
+                    </b>
+                </h5>
             </div> <!-- collapsible header -->
 
             <!-- collapsible body alternativas -->
@@ -119,7 +139,8 @@
                         <div class="card-content row" id="form-questao-alternativa">
                             <button type="submit" id="cadastrar" class="btn indigo darken-3">Adicionar
                                 Alternativa</button>
-                            <div class="card">
+
+                            <div class="section">
                                 <div id="input-inject">
                                     <!-- input titulo-->
                                     <div class="row">

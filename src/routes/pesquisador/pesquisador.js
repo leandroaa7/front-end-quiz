@@ -7,18 +7,18 @@ const questionarioRoutes = require('./questionario');
 const recomendacaoRoutes = require('./recomendacao');
 
 router.get('/', (req, res) => {
-    res.render('pesquisador/pesquisador', { title: "pesquisador" })
+    res.render('pesquisador/pesquisador', { title: "pesquisador", login: true })
 });
 
 router.post('/', (req, res) => {
     res.json(req.body);
 });
 
-router.post('/atualizar', (req, res) => {   
+router.post('/atualizar', (req, res) => {
     res.json(req.body);
 })
 
-router.post('/excluir', (req, res) => {   
+router.post('/excluir', (req, res) => {
     res.json(req.body);
 })
 

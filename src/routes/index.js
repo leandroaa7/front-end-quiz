@@ -10,6 +10,6 @@ router.get('/termo',homeController.getTermo)
 
 router.use('/pesquisador', userRoutes);
 router.use('/questionario',questionarioRoutes);
-
+//router.use('/resposta')
 
 module.exports = router;
