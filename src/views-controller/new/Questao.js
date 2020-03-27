@@ -6,6 +6,10 @@ export default class Questao {
         this.alternativaController = new Alternativa();
         this.formAlternativa = document.getElementById('form-questao-alternativa');
         this.alternativeModel = document.getElementById('alternativa-model').children[0];
+
+        this.container.formAlert = document.querySelector('.questao#form-alert ');
+        this.alternativaController.container.formAlert = document.querySelector('.alternativa#form-alert ');
+
     }
 
     goToAdd = () => {
@@ -46,8 +50,32 @@ export default class Questao {
         this.container.hideContainer();
     }
 
+    //quando alguém clicar no botão excluir deve aparecer um alerta caso ela tenha certeza
+    goToDelete = () => {
+        let action = "/pesquisador/excluir";
+        let method = "POST";
+        this.container.goToDelete(action, method);
+    }
+
+    //ir para o formulário de alerta sobre excluir um elemento
+    goToDeleteCancel = () => {
+        this.container.goToDeleteCancel();
+    }
+
 
     //alternativa functions 
+
+    //quando alguém clicar no botão excluir deve aparecer um alerta caso ela tenha certeza
+    goToDeleteUpdate = () => {
+        let action = "/pesquisador/excluir";
+        let method = "POST";
+        this.alternativaController.container.goToDelete(action, method);
+    }
+
+    //ir para o formulário de alerta sobre excluir um elemento
+    goToDeleteCancelUpdate = () => {
+        this.alternativaController.container.goToDeleteCancel();
+    }
 
     showFormAlternativa = () => {
         this.formAlternativa.removeAttribute('hidden');
@@ -114,7 +142,7 @@ export default class Questao {
 
         //é necessário ter 2 alternátivas fora a model localizada pelo querySelectorAll
         if (alternatives.length > 2) {
-            alert.setAttribute('hidden','');
+            alert.setAttribute('hidden', '');
             this.container.btnCadastrar.classList.remove('disabled')
         } else {
             alert.removeAttribute('hidden');

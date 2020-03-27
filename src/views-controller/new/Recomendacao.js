@@ -23,7 +23,6 @@ export default class Recomendacao {
 
     //quando alguém clicar no botão excluir deve aparecer um alerta caso ela tenha certeza
     goToDelete = () => {
-        console.log('eita');
         let action = "/pesquisador/excluir";
         let method = "POST";
         this.container.goToDelete(action, method);

@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .getElementById('questoes')
         .addEventListener('click', questaoController.goToUpdate)
 
+    document
+        .querySelector('#btn-questao').children.excluir
+        .addEventListener('click', questaoController.goToDelete)
+
+    document
+        .querySelector('.questao#form-alert-cancel')
+        .addEventListener('click', questaoController.goToDeleteCancel)
 
     //alternativa
     document
@@ -29,4 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document
         .getElementById('form-questao-alternativa')
         .addEventListener('click', questaoController.administrateAlternative)
+
+    document
+        .querySelector('#btn-alternativa').children.excluir
+        .addEventListener('click', questaoController.goToDeleteUpdate)
+
+    document
+        .querySelector('.alternativa#form-alert-cancel')
+        .addEventListener('click', questaoController.goToDeleteCancelUpdate)
 });

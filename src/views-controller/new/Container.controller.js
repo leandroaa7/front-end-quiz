@@ -6,8 +6,9 @@ export default class Container {
         this.name = name;
         this.container = document.getElementById('container-' + name);
         this.form = new Form(document.getElementById('form-' + name), inputIdList);
-        this.formAlert = document.getElementById("form-alert");
 
+        //e se houver mais de um form alert? TRATAR
+        this.formAlert = document.getElementById("form-alert");
 
         //buttons form
         this.buttons = document.getElementById('btn-' + name).children;

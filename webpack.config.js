@@ -34,6 +34,7 @@ const scriptsPesquisador = {
         index: './src/views-controller/pesquisador/index.js',
         questionario: './src/views-controller/pesquisador/questionario.js',
         recomendacao: './src/views-controller/pesquisador/recomendacao.js'
+        
 
     },
     output: {
@@ -49,7 +50,8 @@ const scriptsVisitante = {
     mode: "production",
     entry: {
         index: './src/views-controller/visitante/index.js',
-        questionario: './src/views-controller/visitante/questionario.js'
+        questionario: './src/views-controller/visitante/questionario.js',
+        nav: './src/views-controller/nav.js'
 
     },
     output: {

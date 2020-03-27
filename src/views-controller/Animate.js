@@ -6,11 +6,8 @@ class Animate {
 
     removerClasses = (elemento, classe, range) => {
         let classes = Array.from(elemento.classList);
-        console.log(classes);
         if (range == true) {
             let elementosARemover = classes.slice(classes.indexOf(classe));
-            console.log('toRemove');
-            console.log(elementosARemover);
             for (let elementoARemover of elementosARemover) {
                 elemento.classList.remove(elementoARemover);
             }
