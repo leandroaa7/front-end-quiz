@@ -14,6 +14,22 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
+
+hbs.registerHelper("inc", function (value) {
+  return parseInt(value) + 1;
+});
+
+hbs.registerHelper("get_index", function (element, list) {
+  list.questionarioList.forEach((el, i) => {
+    if (el.titulo == element.titulo) {
+      return i;
+    }
+  })
+});
+
+hbs.registerHelper('fist', function (list) {
+  return list[0];
+})
 //logs
 app.use(logger('dev'));
 

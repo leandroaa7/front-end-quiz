@@ -2,7 +2,7 @@ import Animate from '../Animate';
 
 export default class Questionario {
     constructor(qtdQuestao) {
-        this.qtdQuestao = qtdQuestao;
+        this.qtdQuestao = parseInt(qtdQuestao);
 
         this.btnVoltar = document.getElementById('voltar')
         this.btnAvancar = document.getElementById('avancar');
@@ -26,10 +26,10 @@ export default class Questionario {
     voltar = () => {
         let questaoIndex = (this.btnVoltar.dataset.index * 1);
 
-        if (questaoIndex == 1) {
+        if (questaoIndex == 0) {
             this.alertar("Atenção: esta é a primeira questão")
         } else {
-            if (this.btnVoltar.dataset.index == this.qtdQuestao) {
+            if (this.btnVoltar.dataset.index == this.qtdQuestao * 1) {
                 this.btnFinalizar.classList.add('hide');
                 this.btnAvancar.classList.remove('hide');
             }

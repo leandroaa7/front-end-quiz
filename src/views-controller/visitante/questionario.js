@@ -1,8 +1,8 @@
 import Questionario from '../new/Questionario';
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    const questionario = new Questionario(2);
+    let totalQuestao = document.getElementById('questionario-form').dataset.totalQuestao
+    const questionario = new Questionario(totalQuestao);
 
     document
         .getElementById('voltar')

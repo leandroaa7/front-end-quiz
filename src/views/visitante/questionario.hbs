@@ -10,11 +10,24 @@
             </b>
         </div><!-- title -->
 
+        <section class="card z-depth-2">
+            <!-- title -->
+            <div class="card-title section center ">
+                <b>
+                    Assinale o seu grau de concordância em relação às seguintes afirmações:
+                    De 0. Não aplicável. 1 Discordo totalmente a 7 Concordo totalmente *
+                </b>
+            </div><!-- title -->
 
-        <form action="" method="POST" class="questionario" id="questionario-form" data-total-questao="2">
+        </section>
+
+
+        <form action="" method="POST" class="questionario" id="questionario-form"
+            data-total-questao="{{total_questao}}">
+
 
             <!-- questao -->
-            <section class="card z-depth-1" id="questao-section-1">
+            <section class="card z-depth-0" id="questao-section-0">
 
                 <div class="card-title center">
                     <b>
@@ -25,83 +38,60 @@
                 <div class="card-content">
                     <blockquote>
                         <h5>
-                            Quantos funcionários existem na sua empresa?
+                            {{first.titulo}}
                         </h5>
                     </blockquote>
 
-                    <section id="questao-radio-1">
-                        <p>
+                    <section id="questao-radio-0">
+                        {{#each first.alternativa_list}}
+                        <p class="">
                             <label>
-                                <input name="questao1" value="até 50 funcionários" class="questao1" type="radio" />
-                                <span>até 50 funcionários</span>
+                                <input name="questao0" value="{{this.peso}}" data-titulo="{{this.titulo}}"
+                                    class="questao0" type="radio" />
+                                <span>{{this.titulo}}</span>
                             </label>
                         </p>
-                        <p>
-                            <label>
-                                <input name="questao1" value="entre 51 a 200" class="questao1" type="radio" />
-                                <span>entre 51 a 200</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="questao1" value="entre 201 a 1.000" class="questao1" type="radio" />
-                                <span>entre 201 a 1.000</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="questao1" value="entre 1001 a 10.000" class="questao1" type="radio" />
-                                <span>entre 1001 a 10.000</span>
-                            </label>
-                        </p>
+                        {{/each}}
                     </section>
                 </div><!-- content -->
             </section><!-- questao -->
 
+
+            {{#each questionarioList}}
             <!-- questao -->
-            <section class="card z-depth-1" id="questao-section-2" hidden="">
+            <section class="card z-depth-1" id="questao-section-{{inc @index}}" hidden="">
 
                 <div class="card-title center">
                     <b>
-                        Questão 2
+                        Questão {{inc @index}}
                     </b>
                 </div><!-- title -->
                 <!-- content -->
                 <div class="card-content">
                     <blockquote>
                         <h5>
-                            Indique o nível de concorrência
+                            {{this.titulo}}
                         </h5>
                     </blockquote>
 
-                    <section id="questao-radio-2">
-                        <p>
+                    <section id="questao-radio-{{inc @index}}">
+                        {{#each this.alternativa_list}}
+                        <p class="">
                             <label>
-                                <input name="questao2" value="Nenhuma concorrência" class="questao2" type="radio" />
-                                <span>Nenhuma concorrência</span>
+                                <input name="questao{{get_index ../this   @root}}" value="{{this.peso}}"
+                                    data-titulo="{{this.titulo}}" class="questao{{get_index ../this   @root}}"
+                                    type="radio" />
+                                <span>{{this.titulo}}</span>
                             </label>
                         </p>
-                        <p>
-                            <label>
-                                <input name="questao2" value="Pouca concorrência" class="questao2" type="radio" />
-                                <span>Pouca concorrência</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="questao2" value="Média concorrência" class="questao2" type="radio" />
-                                <span>Média concorrência</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="questao2" value="Muita concorrência" class="questao2" type="radio" />
-                                <span>Muita concorrência</span>
-                            </label>
-                        </p>
+                        {{/each}}
                     </section>
                 </div><!-- content -->
             </section><!-- questao -->
+
+            {{/each}}
+
+
 
             <!-- card questionario buttons and alert -->
             <div class="card-action">
@@ -112,8 +102,8 @@
                     </h5>
                 </blockquote>
 
-                <button type="button" class="red darken-2 btn" id="voltar" data-index="1">Voltar</button>
-                <button type="button" class="red darken-2 btn right" id="avancar" data-index="1">Avançar</button>
+                <button type="button" class="red darken-2 btn" id="voltar" data-index="0">Voltar</button>
+                <button type="button" class="red darken-2 btn right" id="avancar" data-index="0">Avançar</button>
 
                 <button type="submit" class="indigo darken-3 btn right hide" id="finalizar">Finalizar</button>
 

@@ -31,14 +31,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="1">
-                            <td>Leandro</td>
-                            <td>leandro@gmail.com</td>
+                        {{#each pesquisadorList}}
+                        <tr id="{{this.id}}">
+                            <td>{{this.nome}}</td>
+                            <td>{{this.email}}</td>
                         </tr>
-                        <tr id="2">
-                            <td>alves</td>
-                            <td>alves@gmail.com</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
