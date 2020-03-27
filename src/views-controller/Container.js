@@ -23,6 +23,7 @@ export default class Container {
     //2- vai para o form
     //urlAction = 
     goToUpdate = (dataList, urlAction, method) => {
+        
         this.showContainer();
         this.form.setValueForm(dataList);
         this.form.setForm(urlAction, method)

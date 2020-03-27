@@ -1,10 +1,8 @@
 export default class Table {
 
     // recebe instancia da classe para funções de CRUD
-    constructor(tableName) {
-
-        let name = tableName;
-        this.table = document.getElementById(name);
+    constructor(idTable) {
+        this.table = document.getElementById(idTable);
     }
 
     //1-adiciona dados da row no form 
@@ -22,7 +20,7 @@ export default class Table {
     addRow = (dataList) => {
         let row = this.table.insertRow(0);
         dataList.forEach((el, i) => {
-            row.insertCell(i).innerHTML = dataList[i];
+            row.insertCell(i).innerText = dataList[i];
         })
     }
 
@@ -30,7 +28,7 @@ export default class Table {
     getDataOfRow = (cells) => {
         let dataRow = [];
         for (let cell of cells) {
-            dataRow.push(cell.innerHTML)
+            dataRow.push(cell.innerText)
         }
         return dataRow;
     }

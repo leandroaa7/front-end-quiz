@@ -1,0 +1,129 @@
+{{> nav}}
+
+<section class="container">
+    <!-- card questionario -->
+    <section class="card z-depth-2">
+        <!-- title -->
+        <div class="card-title section center grey darken-3 white-text">
+            <b>
+                Questionário
+            </b>
+        </div><!-- title -->
+
+
+        <form action="" class="questionario" id="questionario-form" data-total-questao="2">
+
+            <!-- questao -->
+            <section class="card z-depth-1" id="questao-section-1">
+
+                <div class="card-title center">
+                    <b>
+                        Questão 1
+                    </b>
+                </div><!-- title -->
+                <!-- content -->
+                <div class="card-content">
+                    <blockquote>
+                        <h5>
+                            Você dorme bem
+                        </h5>
+                    </blockquote>
+
+                    <section id="questao-radio-1">
+                        <p>
+                            <label>
+                                <input name="questao1" value="Red" class="questao1" type="radio" />
+                                <span>Red</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao1" value="Yellow" class="questao1" type="radio" />
+                                <span>Yellow</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao1" value="Red2" class="questao1" type="radio" />
+                                <span>Red</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao1" value="Yellow2" class="questao1" type="radio" />
+                                <span>Yellow</span>
+                            </label>
+                        </p>
+                    </section>
+                </div><!-- content -->
+            </section><!-- questao -->
+
+            <!-- questao -->
+            <section class="card z-depth-1" id="questao-section-2" hidden="">
+
+                <div class="card-title center">
+                    <b>
+                        Questão 2
+                    </b>
+                </div><!-- title -->
+                <!-- content -->
+                <div class="card-content">
+                    <blockquote>
+                        <h5>
+                            Você lembra da questão anterior
+                        </h5>
+                    </blockquote>
+
+                    <section id="questao-radio-2">
+                        <p>
+                            <label>
+                                <input name="questao2" value="Red" class="questao2" type="radio" />
+                                <span>Red</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao2" value="Yellow" class="questao2" type="radio" />
+                                <span>Yellow</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao2" value="Red2" class="questao2" type="radio" />
+                                <span>Red</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="questao2" value="Yellow2" class="questao2" type="radio" />
+                                <span>Yellow</span>
+                            </label>
+                        </p>
+                    </section>
+                </div><!-- content -->
+            </section><!-- questao -->
+
+            <!-- card questionario buttons and alert -->
+            <div class="card-action">
+
+                <blockquote class="yellow section" id="alerta" hidden="">
+                    <h5>
+                        <b id="alerta-message">Selecione uma opção válida por favor</b>
+                    </h5>
+                </blockquote>
+
+                <button type="button" class="red darken-2 btn" id="voltar" data-index="1">Voltar</button>
+                <button type="button" class="red darken-2 btn right" id="avancar" data-index="1">Avançar</button>
+
+                <button type="button" class="indigo darken-3 btn right hide" id="finalizar">Finalizar</button>
+
+
+            </div> <!-- card questionario buttons and alert -->
+
+        </form>
+
+    </section><!-- card questionario -->
+</section>
+
+
+<script src="/static/js/visitante/questionario.js"></script>

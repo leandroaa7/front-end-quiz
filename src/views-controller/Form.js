@@ -14,6 +14,13 @@ export default class Form {
         this.form.reset();
     }
 
+    //apenas por estética, deixa os inputs sem o placehover
+    setActiveClass = () => {
+        this.inputsId.forEach((el) => {
+            this.form[el].classList.add('active')
+        });
+    }
+
     //insere valores nos inputs
     //assumindo que os valores das celulas estejam na mesma ordem dos inputs
     setValueForm = (list) => {

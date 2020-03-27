@@ -26,7 +26,8 @@ export default class AddEvent {
             eventsListOfObject.push({
                 elementToFind: 'new-' + this.nameInstance,
                 eventName: 'click',
-                eventFunction: this.controllerInstance.goToAdd
+                eventFunction: this.controllerInstance.goToAdd,
+                getElementType: "ById"
             });
         }
 
@@ -35,7 +36,8 @@ export default class AddEvent {
             eventsListOfObject.push({
                 elementToFind: 'table-' + this.nameInstance,
                 eventName: 'click',
-                eventFunction: this.controllerInstance.goToUpdate
+                eventFunction: this.controllerInstance.goToUpdate,
+                getElementType: "ById"
             })
         }
 
@@ -44,7 +46,8 @@ export default class AddEvent {
             eventsListOfObject.push({
                 elementToFind: "excluir",
                 eventName: 'click',
-                eventFunction: this.controllerInstance.goToDelete
+                eventFunction: this.controllerInstance.goToDelete,
+                getElementType: "ById"
             })
         }
 
@@ -53,7 +56,17 @@ export default class AddEvent {
             eventsListOfObject.push({
                 elementToFind: 'form-alert-cancel',
                 eventName: 'click',
-                eventFunction: this.controllerInstance.goToDeleteCancel
+                eventFunction: this.controllerInstance.goToDeleteCancel,
+                getElementType: "ById"
+            })
+        }
+        //evento de clicar em um elemento de uma lista
+        if (eventsControllerObject.liClick) {
+            eventsListOfObject.push({
+                elementToFind: 'alternativa',
+                eventName: 'click',
+                eventFunction: this.controllerInstance.goToUpdateByList,
+                getElementType: "ByClassName"
             })
         }
 
@@ -61,13 +74,26 @@ export default class AddEvent {
 
     }
 
-    setEvent = (elementTofind, eventName, eventFunction) => {
-        document.getElementById(elementTofind).addEventListener(eventName, eventFunction);
+    setEvent = (elementToFind, eventName, eventFunction, getElementType) => {
+        let elements;
+        if (getElementType == "ByClassName") {
+            elements = document.getElementsByClassName(elementToFind);
+            if (elements.length > 1) {
+                elements = Array.from(elements);
+                elements.forEach((el) => {
+                    el.addEventListener(eventName, eventFunction);
+                })
+            } else {
+                elements.addEventListener(eventName, eventFunction);
+            }
+        } else {
+            document.getElementById(elementToFind).addEventListener(eventName, eventFunction);
+        }
     }
 
     setEvents = () => {
         this.eventsList.forEach((obj) => {
-            this.setEvent(obj.elementToFind, obj.eventName, obj.eventFunction)
+            this.setEvent(obj.elementToFind, obj.eventName, obj.eventFunction,obj.getElementType)
         });
     }
 }

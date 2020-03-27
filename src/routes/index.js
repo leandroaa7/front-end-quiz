@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
 const homeController = require('../controllers/home.controller');
-const userRoutes = require('./pesquisador');
-const questaoRoutes = require('./questao');
+const userRoutes = require('./pesquisador/pesquisador');
 const questionarioRoutes = require('./questionario');
 
-
 /* GET home page. */
-router.get('/favicon.ico', (req, res) => res.status(204));
 router.get('/', homeController.renderHome);
+router.get('/termo',homeController.getTermo)
+
 router.use('/pesquisador', userRoutes);
-router.use('/questionario', questionarioRoutes);
-router.use('/questao', questaoRoutes);
+router.use('/questionario',questionarioRoutes);
+
 
 module.exports = router;

@@ -3,81 +3,95 @@
 <div class="container ">
 
     <section class="section lighten-3 center">
-        <h4>Pesquisadores</h4>
+        <h4>Recomendações</h4>
     </section>
 
     <!-- section alerta -->
     <section>
         <blockquote class=" section yellow">
-            <h5><b>Atenção:</b> Clique no pesquisador caso haja modificações</h5>
+            <h5><b>Atenção:</b> Clique na recomendação caso haja modificações</h5>
         </blockquote>
     </section><!-- section alerta -->
 
     <section class="right-align">
-        <a id="new-pesquisador" class="btn indigo darken-3" data-toggle="container-pesquisador">Cadastrar
-            novo pesquisador</a>
+        <a id="new-recomendacao" class="btn indigo darken-3" data-toggle="container-recomendacao">Cadastrar
+            novo recomendação</a>
     </section>
 
-    <!-- section pesquisador -->
+    <!-- section recomendacao -->
     <section class="section">
         <div class="card z-depth-2">
-            <div class="card-title center grey darken-3 white-text">Pesquisadores</div>
+            <div class="card-title center grey darken-3 white-text">Recomendações</div>
             <div class="card-content">
-                <table class="striped" id="table-pesquisador">
+                <table class="striped" id="table-recomendacao">
                     <thead>
                         <tr>
-                            <th>Pesquisador</th>
-                            <th>E-mail</th>
+                            <th>Recomendação</th>
+                            <th>Menor Valor</th>
+                            <th>Maior Valor</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr id="1">
-                            <td>Leandro</td>
-                            <td>leandro@gmail.com</td>
+                            <td>Perguntas da quarta página que começa com Para me esforçar além do normal, eu preciso
+                                receber uma remuneração extra</td>
+                            <td>1</td>
+                            <td>3</td>
                         </tr>
                         <tr id="2">
-                            <td>alves</td>
-                            <td>alves@gmail.com</td>
+                            <td>Ta indo bem hein </td>
+                            <td>4</td>
+                            <td>6</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </section><!-- section pesquisador -->
+    </section><!-- section recomendacao -->
 
     <!-- container adm -->
-    <section class="section " id="container-pesquisador" hidden="">
+    <section class="section " id="container-recomendacao" hidden="">
         <div class="card">
             <div class="card-content row">
                 <!-- form -->
-                <form action="" id="form-pesquisador" data-inject="pesquisador" class="col s12">
+                <form action="" id="form-recomendacao" data-inject="recomendacao" class="col s12">
 
                     <div id="input-inject">
 
                         <input type="hidden" name="id" value="">
 
-                        <!-- input nome-->
+                        <!-- input titulo-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <label for="nome">Nome do Pesquisador</label>
-                                <input type="text" id="nome" placeholder="Nome do Pesquisador" name="nome" value=""
+                                <label for="titulo">Título da recomendacao</label>
+                                <input type="text" id="titulo" placeholder="titulo do recomendacao" name="titulo" value=""
+                                    required>
+                            </div>
+                        </div><!-- input titulo -->
+
+                        <!-- input menor-valor-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="menor-valor">Título da recomendacao</label>
+                                <input type="number" min="0" max="10" id="menor-valor" placeholder="menor valor da recomendação" name="menor-valor" value=""
                                     required>
                             </div>
                         </div><!-- input nome -->
 
-                        <!-- input email -->
+                        <!-- input maior-valor-->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="email" id="email" name="email" value="" placeholder="email do Pesquisador"
+                                <label for="maior-valor">Título da recomendacao</label>
+                                <input type="number" min="0" max="10" id="maior-valor" placeholder="maior-valor do recomendacao" name="maior-valor" value=""
                                     required>
-                                <label for="email">E-Email do Pesquisador</label>
                             </div>
-                        </div><!-- input email -->
+                        </div><!-- input maior-valor -->
 
                     </div>
 
                     <!-- form buttons -->
-                    <div class="right-align" id="btn-pesquisador">
+                    <div class="right-align" id="btn-recomendacao">
                         <!-- modal button -->
                         <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
                         <!-- modal button -->
@@ -106,4 +120,4 @@
     <!-- container adm -->
 </div>
 
-<script src="/static/js/pesquisador/index.js"></script>
+<script src="/static/js/pesquisador/recomendacao.js"></script>

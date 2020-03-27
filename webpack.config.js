@@ -32,7 +32,9 @@ const scriptsPesquisador = {
     mode: "production",
     entry: {
         index: './src/views-controller/pesquisador/index.js',
-        questionario: './src/views-controller/pesquisador/questionario.js'
+        questionario: './src/views-controller/pesquisador/questionario.js',
+        recomendacao: './src/views-controller/pesquisador/recomendacao.js'
+
     },
     output: {
         filename: "[name].js",
@@ -46,7 +48,9 @@ const scriptsVisitante = {
     name: "visitante",
     mode: "production",
     entry: {
-        index: './src/views-controller/visitante/index.js'
+        index: './src/views-controller/visitante/index.js',
+        questionario: './src/views-controller/visitante/questionario.js'
+
     },
     output: {
         filename: "[name].js",

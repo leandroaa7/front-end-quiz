@@ -1,80 +1,245 @@
 {{> nav}}
 
-<div class="container ">
+<div class="container">
 
-    <!-- section questionario -->
-    <section class="section">
-        <div class="card z-depth-2">
-            <div class="card-title center grey darken-3 white-text">Questões</div>
-            <div class="card-content">
-                <ul class="collapsible">
-                    <li class="z-depth-2">
-                        <div class="collapsible-header  ">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nihil quos dolorum
-                            ut eum repudiandae amet corporis placeat. Quos saepe veritatis similique minima beatae
-                            deleniti, reiciendis nemo adipisci harum nihil?
-                        </div>
-                        <div class="collapsible-body grey lighten-2">
-                            <button class="right-align btn red darken-3">Administrar Questão</button>
-                            <div class="section"></div>
-                            <button class="right-align btn indigo darken-3" id="new-{{title}}">Adicionar
-                                Alternativa</button>
+    <!-- buttons -->
+    <div class="section">
+        <button class="right-align btn indigo darken-3 alternativa" id="new-questao">
+            Adicionar Questão
+        </button>
+    </div>
+    <!-- buttons -->
 
-                            <p class="center"><b>Alternativas</b></p>
+    <!-- collapsible -->
+    <ul class="collapsible" id="questoes">
+        <!-- li questao -->
+        <li>
 
-                            <section class="section">
-                                <blockquote class=" section yellow">
-                                    <h5><b>Atenção:</b> Clique na alternativa caso haja alterações </h5>
-                                </blockquote>
-                            </section><!-- section alerta -->
+            <!-- collapsible header -->
+            <div class="collapsible-header questao" id="titulo1">
+                titulo da questao
+            </div> <!-- collapsible header -->
 
-                            <ul id="alternativas" class="">
-                                <li class="card section center-align" id="id" data-titulo="" data-peso="">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
-                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi
-                                    
-                                    <button type="button" style="pointer-events: none;cursor: default;" class="btn-flat indigo darken-3 white-text">Peso 1</button>
-                                </li>
-                                <li class="card section center-align" id="id" data-titulo="" data-peso="">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
-                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
-                                    
-                                    <button type="button" style="pointer-events: none;cursor: default;" class="btn-flat indigo darken-3 white-text">Peso 1</button>
-                                </li>
-                                <li class="card section center-align" id="id" data-titulo="" data-peso="">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
-                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
-                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
-                                    
-                                    <button type="button" style="pointer-events: none;cursor: default;" class="btn-flat indigo darken-3 white-text">Peso 1</button>
-                                </li>
-                            </ul>
-  
-                        </div>
+            <!-- collapsible body alternativas -->
+            <div class="collapsible-body">
 
-                    </li>
+                <!-- buttons -->
+                <div>
+                    <button class="right-align btn red darken-3 questao" data-questao="true" data-id="1">
+                        Administrar Questão
+                    </button>
                     <br>
-                    <li class="z-depth-2">
-                        <div class="collapsible-header">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nihil quos dolorum
-                            ut eum repudiandae amet corporis placeat. Quos saepe veritatis similique minima beatae
-                            deleniti, reiciendis nemo adipisci harum nihil?
+                    <br>
+
+                    <button class="right-align btn indigo darken-3 alternativa" id="new-alternativa">Adicionar
+                        Alternativa
+                    </button>
+                </div><!-- buttons -->
+
+                <!-- alternativa -->
+                <div class="section">
+
+
+
+                    <p class="center"><b>Alternativas</b></p>
+
+                    <section class="section">
+                        <blockquote class=" section yellow">
+                            <h5><b>Atenção:</b> Clique na alternativa caso haja alterações </h5>
+                        </blockquote>
+                    </section><!-- section alerta -->
+
+                    <ul id="alternativas" class="">
+                        <li class="card section center-align alternativa" data-id="1" data-titulo="questao 1"
+                            data-peso="1">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
+                            cupiditate
+                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi
+
+                            <button type="button" style="pointer-events: none;cursor: default;"
+                                class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                        </li>
+                        <li class="card section center-align alternativa" data-id="2" data-titulo="questao 12"
+                            data-peso="2">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
+                            cupiditate
+                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+
+                            <button type="button" style="pointer-events: none;cursor: default;"
+                                class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                        </li>
+                        <li class="card section center-align alternativa" data-id="3" data-titulo="questao 13"
+                            data-peso="3">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum
+                            cupiditate
+                            praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                            laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+
+                            <button type="button" style="pointer-events: none;cursor: default;"
+                                class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                        </li>
+                    </ul>
+                </div><!-- alternativa -->
+
+            </div><!-- collapsible body alternativas -->
+
+        </li><!-- li questao -->
+
+    </ul><!-- collapsible -->
+
+</div>
+
+<div class="container">
+    <!-- container questao -->
+    <section class="section " id="container-questao" hidden="">
+        <div class="card">
+            <div class="card-content row">
+                <!-- form -->
+                <form action="" id="form-questao" data-inject="questao" class="col s12">
+
+                    <!-- form questao -->
+                    <div id="input-inject">
+                        <input type="hidden" name="id" value="">
+                        <!-- input titulo-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="titulo">Título da questão</label>
+                                <input type="text" id="titulo" placeholder="Título da questão" name="titulo" value=""
+                                    required>
+                            </div>
+                        </div><!-- input titulo-->
+
+                    </div> <!-- form questao -->
+
+                    <!-- form alternativa -->
+                    <div>
+
+                        <div class="card-content row" id="form-questao-alternativa">
+                            <button type="submit" id="cadastrar" class="btn indigo darken-3">Adicionar
+                                Alternativa</button>
+                            <div class="card">
+                                <div id="input-inject">
+                                    <!-- input titulo-->
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label for="titulo">Título da alternativa</label>
+                                            <input type="text" id="alternativa-titulo"
+                                                placeholder="Título da alternativa" name="alternativa-titulo" value=""
+                                                required>
+                                        </div>
+                                    </div><!-- input titulo-->
+
+                                    <!-- input peso-->
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="number" max="100" min="1" id="alternativa-peso"
+                                                name="alternativa-peso" value="" placeholder="Peso da alternativa"
+                                                required>
+                                            <label for="peso">Peso da alternativa</label>
+                                        </div>
+                                    </div><!-- input peso-->
+                                </div>
+
+                                <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Remover
+                                    Alternativa</button>
+                                <button type="submit" id="cadastrar" class="btn indigo darken-3">Adicionar
+                                    Alternativa</button>
+                            </div>
                         </div>
-                        <div class="collapsible-body">body</div>
 
-                    </li>
-                </ul>
+                    </div> <!-- form alternativa -->
 
+                    <!-- form buttons -->
+                    <div class="right-align" id="btn-questao">
+                        <!-- modal button -->
+                        <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
+                        <!-- modal button -->
+                        <button type="submit" id="alterar" class="btn yellow accent-3"
+                            style="color:black">Alterar</button>
+                        <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                    </div><!-- form buttons -->
 
+                    <br>
+                    <!-- form alert -->
+                    <div class="card hide" id="form-alert">
+                        <div class="card-title center red darken-3 white-text"> Atenção</div>
+                        <div class="card-content center">
+                            <div action="" id="form-alert">
+
+                                <h5>Tem certeza que deseja remover?</h5>
+                                <button type="button" id="form-alert-cancel" class="btn-flat">cancelar</button>
+                                <button type="submit" class="red darken-3 white-text btn-flat">Excluir</button>
+                            </div>
+                        </div>
+                    </div> <!-- form alert -->
+                </form> <!-- form -->
             </div>
         </div>
-    </section><!-- section questionario -->
+    </section>
+    <!-- container questao -->
 
-    {{> container}}
 
-    {{> pesquisador/inputQuestionario}}
+    <!-- container alternativa -->
+    <section class="section " id="container-alternativa" hidden="">
+        <div class="card">
+            <div class="card-content row">
+                <!-- form -->
+                <form action="" id="form-alternativa" data-inject="alternativa" class="col s12">
+
+
+                    <div id="input-inject">
+                        <input type="hidden" name="id" value="">
+                        <!-- input titulo-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="titulo">Título da alternativa</label>
+                                <input type="text" id="titulo" placeholder="Título da alternativa" name="titulo"
+                                    value="" required>
+                            </div>
+                        </div><!-- input titulo-->
+
+                        <!-- input peso-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" max="100" min="1" id="peso" name="peso" value=""
+                                    placeholder="Peso da alternativa" required>
+                                <label for="peso">Peso da alternativa</label>
+                            </div>
+                        </div><!-- input peso-->
+                    </div>
+
+
+                    <!-- form buttons -->
+                    <div class="right-align" id="btn-alternativa">
+                        <!-- modal button -->
+                        <button type="button" id="excluir" class="btn red darken-3 modal-trigger">Excluir</button>
+                        <!-- modal button -->
+                        <button type="submit" id="alterar" class="btn yellow accent-3"
+                            style="color:black">Alterar</button>
+                        <button type="submit" id="cadastrar" class="btn indigo darken-3">Cadastrar</button>
+                    </div><!-- form buttons -->
+
+                    <br>
+                    <!-- form alert -->
+                    <div class="card hide" id="form-alert">
+                        <div class="card-title center red darken-3 white-text"> Atenção</div>
+                        <div class="card-content center">
+                            <div action="" id="form-alert">
+
+                                <h5>Tem certeza que deseja remover?</h5>
+                                <button type="button" id="form-alert-cancel" class="btn-flat">cancelar</button>
+                                <button type="submit" class="red darken-3 white-text btn-flat">Excluir</button>
+                            </div>
+                        </div>
+                    </div> <!-- form alert -->
+                </form> <!-- form -->
+            </div>
+        </div>
+    </section>
+    <!-- container alternativa -->
 </div>
+
 
 <script src="/static/js/pesquisador/questionario.js"></script>

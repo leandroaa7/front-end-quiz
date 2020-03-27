@@ -1,0 +1,85 @@
+{{> nav}}
+
+<div class="container ">
+
+    <!-- section questionario -->
+    <section class="section">
+        <!-- card -->
+        <div class="card z-depth-2">
+            <!-- card title -->
+            <div class="card-title center grey darken-3 white-text">
+                Questões
+            </div>
+            <!-- card title -->
+
+            <!-- card content -->
+            <div class="card-content">
+                
+                <!-- collapse -->
+                <ul class="collapsible" id="questoes">
+                    <li class="z-depth-2">
+                        <div class="collapsible-header questao" id="questao1" data-questao="1">Lorem ipsum dolor sit,
+                            amet consectetu</div>
+                        <div class="collapsible-body grey lighten-2">
+
+                            <button class="right-align btn red darken-3 adm questao change-{{title}}"
+                                data-id="1">Administrar
+                                Questão</button>
+
+                            <div class="section"></div>
+                            <button class="right-align btn indigo darken-3" id="new-{{title}}">Adicionar
+                                Alternativa</button>
+
+                            <p class="center"><b>Alternativas</b></p>
+
+                            <section class="section">
+                                <blockquote class=" section yellow">
+                                    <h5><b>Atenção:</b> Clique na alternativa caso haja alterações </h5>
+                                </blockquote>
+                            </section><!-- section alerta -->
+
+                            <ul id="alternativas" class="">
+                                <li class="card section center-align alternativa" data-id="1" data-titulo="questao 1"
+                                    data-peso="1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
+                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi
+
+                                    <button type="button" style="pointer-events: none;cursor: default;"
+                                        class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                                </li>
+                                <li class="card section center-align alternativa" data-id="2" data-titulo="questao 12"
+                                    data-peso="2">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
+                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+
+                                    <button type="button" style="pointer-events: none;cursor: default;"
+                                        class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                                </li>
+                                <li class="card section center-align alternativa" data-id="3" data-titulo="questao 13"
+                                    data-peso="3">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum cupiditate
+                                    praesentium officiis? Fugiat eligendi blanditiis temporibus voluptatem earum
+                                    laboriosam corporis a voluptatibus cum. Autem laborum vero nam omnis commodi.
+
+                                    <button type="button" style="pointer-events: none;cursor: default;"
+                                        class="btn-flat indigo darken-3 white-text">Peso 1</button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </li>
+                </ul><!-- collapse -->
+
+            </div><!-- card content -->
+        </div> <!-- card -->
+    </section><!-- section questionario -->
+
+    {{> container}}
+
+    {{> pesquisador/inputQuestionario}}
+</div>
+
+<script src="/static/js/pesquisador/questionario.js"></script>
