@@ -161,76 +161,12 @@
                             <!-- buttons alternativa -->
 
                         </div><!-- alternativa -->
-
-                        <!-- alternativa -->
-                        <div class="card section alternativa">
-                            <div class="card-content" id="input-inject">
-
-                                <!-- input titulo-->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <label for="titulo">Título da alternativa</label>
-                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
-                                            name="alternativa-titulo" value="" required>
-                                    </div>
-                                </div><!-- input titulo-->
-
-                                <!-- input peso-->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input type="number" max="100" min="1" id="alternativa-peso"
-                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
-                                        <label for="peso">Peso da alternativa</label>
-                                    </div>
-                                </div><!-- input peso-->
-                            </div>
-
-                            <!-- buttons alternativa -->
-
-                            <button type="button" id="excluir" data-action="excluir"
-                                class="btn red darken-3 modal-trigger">Remover
-                                Alternativa</button>
-                            <!-- buttons alternativa -->
-
-                        </div><!-- alternativa -->
-
-                        <!-- alternativa -->
-                        <div class="card section alternativa">
-                            <div class="card-content" id="input-inject">
-
-                                <!-- input titulo-->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <label for="titulo">Título da alternativa</label>
-                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
-                                            name="alternativa-titulo" value="" required>
-                                    </div>
-                                </div><!-- input titulo-->
-
-                                <!-- input peso-->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input type="number" max="100" min="1" id="alternativa-peso"
-                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
-                                        <label for="peso">Peso da alternativa</label>
-                                    </div>
-                                </div><!-- input peso-->
-                            </div>
-
-                            <!-- buttons alternativa -->
-
-                            <button type="button" id="excluir" data-action="excluir"
-                                class="btn red darken-3 modal-trigger">Remover
-                                Alternativa</button>
-                            <!-- buttons alternativa -->
-
-                        </div><!-- alternativa -->
-
-
-
-                        <button type="button" id="cadastrar" data-action="cadastrar"
-                            class="btn indigo darken-3 right">Adicionar
-                            Alternativa</button>
+                        <div class="section">
+                            <button type="button" id="cadastrar" data-action-alternativa="cadastrar"
+                                class="btn indigo darken-3 right">
+                                Adicionar Alternativa
+                            </button>
+                        </div>
 
                     </div> <!-- form alternativa -->
                     <br>
@@ -331,7 +267,44 @@
         </div>
     </section>
     <!-- container alternativa -->
+
+    <!-- alternativa model -->
+    <div id="alternativa-model" hidden="">
+
+        <div class="card section">
+            <div class="card-content" id="input-inject">
+
+                <!-- input titulo-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="titulo">Título da alternativa</label>
+                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
+                            name="alternativa-titulo" value="" required>
+                    </div>
+                </div><!-- input titulo-->
+
+                <!-- input peso-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="number" max="100" min="1" id="alternativa-peso" name="alternativa-peso" value=""
+                            placeholder="Peso da alternativa" required>
+                        <label for="peso">Peso da alternativa</label>
+                    </div>
+                </div><!-- input peso-->
+            </div>
+
+            <!-- buttons alternativa -->
+
+            <button type="button" id="excluir" data-action-alternativa="excluir"
+                class="btn red darken-3 modal-trigger">Remover
+                Alternativa</button>
+            <!-- buttons alternativa -->
+
+        </div><!-- alternativa model -->
+    </div>
 </div>
+
+
 
 
 <script src="/static/js/pesquisador/questionario.js"></script>

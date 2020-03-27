@@ -5,6 +5,7 @@ export default class Questao {
         this.container = new Container("questao", ["id", "titulo"])
         this.alternativaController = new Alternativa();
         this.formAlternativa = document.getElementById('form-questao-alternativa');
+        this.alternativeModel = document.getElementById('alternativa-model').children[0];
     }
 
     goToAdd = () => {
@@ -83,9 +84,9 @@ export default class Questao {
     administrateAlternative = (event) => {
         let target = event.target;
         if (target.tagName == "BUTTON") {
-            if (target.dataset.action == "excluir") {
+            if (target.dataset.action == "excluir" || target.dataset.actionAlternativa == "excluir") {
                 this.excludeAlternative(target)
-            } else if (target.dataset.action == "cadastrar") {
+            } else if (target.dataset.actionAlternativa == "cadastrar") {
                 this.addAlternative(target);
             }
         }
@@ -94,11 +95,14 @@ export default class Questao {
     excludeAlternative = (target) => {
         let alternative = target.parentNode;
         let alternativeList = alternative.parentNode;
-        console.log(alternativeList.children)
         alternativeList.removeChild(alternative);
     }
 
     addAlternative = (target) => {
-
+        let buttonAdd = target.parentNode;
+        let model = this.alternativeModel.cloneNode(true);
+        this.formAlternativa.removeChild(buttonAdd);
+        this.formAlternativa.append(model);
+        this.formAlternativa.appendChild(buttonAdd);
     }
 }

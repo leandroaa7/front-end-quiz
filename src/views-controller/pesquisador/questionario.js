@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document
         .getElementById('questoes')
-        .addEventListener('click',questaoController.goToUpdate)
-    
+        .addEventListener('click', questaoController.goToUpdate)
+
 
     //alternativa
     document
@@ -26,9 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .getElementById('alternativas')
         .addEventListener('click', questaoController.goToUpdateAlternative)
 
-        document
+    document
         .getElementById('form-questao-alternativa')
         .addEventListener('click', questaoController.administrateAlternative)
-        
-
 });
