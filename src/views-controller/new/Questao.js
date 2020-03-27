@@ -89,6 +89,8 @@ export default class Questao {
             } else if (target.dataset.actionAlternativa == "cadastrar") {
                 this.addAlternative(target);
             }
+            this.validateAlternative();
+
         }
     }
 
@@ -104,5 +106,19 @@ export default class Questao {
         this.formAlternativa.removeChild(buttonAdd);
         this.formAlternativa.append(model);
         this.formAlternativa.appendChild(buttonAdd);
+    }
+
+    validateAlternative = () => {
+        let alternatives = document.querySelectorAll('.new-alternativa');
+        let alert = document.getElementById('alert-alternativa');
+
+        //é necessário ter 2 alternátivas fora a model localizada pelo querySelectorAll
+        if (alternatives.length > 2) {
+            alert.setAttribute('hidden','');
+            this.container.btnCadastrar.classList.remove('disabled')
+        } else {
+            alert.removeAttribute('hidden');
+            this.container.btnCadastrar.classList.add('disabled')
+        }
     }
 }

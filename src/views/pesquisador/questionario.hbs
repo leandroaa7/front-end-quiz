@@ -131,7 +131,7 @@
                         <h5 class="center">Alternativas</h5>
 
                         <!-- alternativa -->
-                        <div class="card section alternativa">
+                        <div class="card section new-alternativa">
                             <div class="card-content" id="input-inject">
 
                                 <!-- input titulo-->
@@ -161,18 +161,52 @@
                             <!-- buttons alternativa -->
 
                         </div><!-- alternativa -->
+
+                        <!-- alternativa -->
+                        <div class="card section new-alternativa">
+                            <div class="card-content" id="input-inject">
+
+                                <!-- input titulo-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="titulo">Título da alternativa</label>
+                                        <input type="text" id="alternativa-titulo" placeholder="Título da alternativa"
+                                            name="alternativa-titulo" value="" required>
+                                    </div>
+                                </div><!-- input titulo-->
+
+                                <!-- input peso-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="number" max="100" min="1" id="alternativa-peso"
+                                            name="alternativa-peso" value="" placeholder="Peso da alternativa" required>
+                                        <label for="peso">Peso da alternativa</label>
+                                    </div>
+                                </div><!-- input peso-->
+                            </div>
+
+                            <!-- buttons alternativa -->
+
+                            <button type="button" id="excluir" data-action="excluir"
+                                class="btn red darken-3 modal-trigger">Remover
+                                Alternativa</button>
+                            <!-- buttons alternativa -->
+
+                        </div><!-- alternativa -->
+
+                        <!-- button add alternativa -->
                         <div class="section">
                             <button type="button" id="cadastrar" data-action-alternativa="cadastrar"
                                 class="btn indigo darken-3 right">
                                 Adicionar Alternativa
                             </button>
-                        </div>
+                        </div><!-- button add alternativa -->
 
                     </div> <!-- form alternativa -->
                     <br>
                     <!-- section alerta -->
                     <section>
-                        <blockquote class=" section yellow">
+                        <blockquote class=" section yellow" id="alert-alternativa" hidden="">
                             <h5><b>Atenção:</b> É necessário ter, pelo menos, duas alternativas</h5>
                         </blockquote>
                     </section><!-- section alerta -->
@@ -271,7 +305,7 @@
     <!-- alternativa model -->
     <div id="alternativa-model" hidden="">
 
-        <div class="card section">
+        <div class="card section new-alternativa">
             <div class="card-content" id="input-inject">
 
                 <!-- input titulo-->
