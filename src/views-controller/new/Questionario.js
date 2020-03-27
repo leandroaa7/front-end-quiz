@@ -48,7 +48,7 @@ export default class Questionario {
                 this.ocultarAlerta();
                 this.btnAvancar.classList.add('hide');
                 this.btnFinalizar.classList.remove('hide');
-                this.alertar("Atenção, tem certeza que quer finalizar o questionário?")
+                this.alertar("Atenção, as perguntas acabaram, gostaria de finalizar o questionário?")
             } else {
                 this.alertar('Atenção, selecione uma alternativa por favor')
             }
