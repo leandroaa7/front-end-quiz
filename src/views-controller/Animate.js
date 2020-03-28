@@ -37,7 +37,7 @@ class Animate {
 
         elementToShow.classList.add('animated', animationInShow)
         elementToShow.removeAttribute('hidden', '');
-
+        window.scroll(elementToShow.offsetLeft, elementToShow.offsetTop);
 
 
     }

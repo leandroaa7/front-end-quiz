@@ -7,10 +7,13 @@ questionarioList.shift();
 let total_questao = questionarioList.length - 1;
 
 router.get('/', (req, res) => {
-    res.render('visitante/questionario', { title: 'Questionário', first: first, questionarioList: questionarioList, total_questao: total_questao })
+    res.render('visitante/questionario',
+        { title: 'Questionário', first: first, questionarioList: questionarioList, total_questao: total_questao }
+    )
 })
 
 router.post('/', (req, res) => {
+    console.log(req.body);
     res.redirect('/questionario/resultado')
 })
 

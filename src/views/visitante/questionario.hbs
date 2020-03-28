@@ -13,10 +13,12 @@
         <section class="card z-depth-2">
             <!-- title -->
             <div class="card-title section center ">
-                <b>
-                    Assinale o seu grau de concordância em relação às seguintes afirmações:
-                    De 0. Não aplicável. 1 Discordo totalmente a 7 Concordo totalmente *
-                </b>
+                <h6>
+                    <b>
+                        Assinale o seu grau de concordância em relação às seguintes afirmações:
+                        De 0. Não aplicável. 1 Discordo totalmente a 7 Concordo totalmente *
+                    </b>
+                </h6>
             </div><!-- title -->
 
         </section>
@@ -42,7 +44,7 @@
                         </h5>
                     </blockquote>
 
-                    <section id="questao-radio-0">
+                    <section id="questao-radio-0" data-categoria="{{first.categoria}}">
                         {{#each first.alternativa_list}}
                         <p class="">
                             <label>
@@ -59,11 +61,12 @@
 
             {{#each questionarioList}}
             <!-- questao -->
-            <section class="card z-depth-1" id="questao-section-{{inc @index}}" hidden="">
+            <section class="card z-depth-1" id="questao-section-{{inc @index}}"
+                hidden="">
 
                 <div class="card-title center">
                     <b>
-                        Questão {{inc @index}}
+                        Questão {{inc @index "2"}}
                     </b>
                 </div><!-- title -->
                 <!-- content -->
@@ -73,13 +76,12 @@
                             {{this.titulo}}
                         </h5>
                     </blockquote>
-
-                    <section id="questao-radio-{{inc @index}}">
+                    
+                    <section class="questao-radio" id="questao-radio-{{inc @index}}" data-index="{{inc @index}}" data-categoria="{{this.categoria}}">
                         {{#each this.alternativa_list}}
                         <p class="">
                             <label>
-                                <input name="questao{{get_index ../this   @root}}" value="{{this.peso}}"
-                                    data-titulo="{{this.titulo}}" class="questao{{get_index ../this   @root}}"
+                                <input name="questao" value="{{this.peso}}" data-titulo="{{this.titulo}}"
                                     type="radio" />
                                 <span>{{this.titulo}}</span>
                             </label>
@@ -105,7 +107,7 @@
                 <button type="button" class="red darken-2 btn" id="voltar" data-index="0">Voltar</button>
                 <button type="button" class="red darken-2 btn right" id="avancar" data-index="0">Avançar</button>
 
-                <button type="submit" class="indigo darken-3 btn right hide" id="finalizar">Finalizar</button>
+                <button type="button" class="indigo darken-3 btn right hide" id="finalizar">Finalizar</button>
 
 
             </div> <!-- card questionario buttons and alert -->
@@ -115,5 +117,62 @@
     </section><!-- card questionario -->
 </section>
 
+
+<section class="container">
+    <div class="card z-depth-2">
+        <!-- title -->
+        <div class="card-title section center grey darken-3 white-text">
+            <b>
+                Feedback do Questionário
+            </b>
+        </div><!-- title -->
+
+        <section class="card-content">
+            <!-- title -->
+            <div class="card-title section center ">
+                <blockquote class="yellow section">
+                    <h5>
+                        <b>
+                            Atenção, este projeto é um estudo. Ele não substitui
+                            um orientador profissional.
+                        </b>
+                    </h5>
+                </blockquote>
+
+                <h3>
+                    <b> Feedbacks</b>
+                </h3>
+
+                <blockquote class="green white-text section" class="feedback">
+                    <h5>
+                        <b id="feedback1">
+                            Atenção, este projeto é um estudo. Ele não substitui
+                            um orientador profissional.
+                        </b>
+                    </h5>
+                </blockquote>
+
+                <blockquote class="green white-text section" class="feedback">
+                    <h5>
+                        <b id="feedback2">
+                            Atenção, este projeto é um estudo. Ele não substitui
+                            um orientador profissional.
+                        </b>
+                    </h5>
+                </blockquote>
+
+                <blockquote class="green white-text section" class="feedback">
+                    <h5>
+                        <b id="feedback3">
+                            Atenção, este projeto é um estudo. Ele não substitui
+                            um orientador profissional.
+                        </b>
+                    </h5>
+                </blockquote>
+            </div><!-- title -->
+
+        </section>
+    </div>
+</section>
 
 <script src="/static/js/visitante/questionario.js"></script>

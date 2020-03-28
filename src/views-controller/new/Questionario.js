@@ -16,6 +16,7 @@ export default class Questionario {
     alertar = (mensagem) => {
         this.alert.removeAttribute('hidden');
         this.alertMessage.innerHTML = mensagem;
+        window.scroll(0, document.body.scrollHeight);
     }
 
     ocultarAlerta = () => {
@@ -98,5 +99,56 @@ export default class Questionario {
                 }
             })
         return isValid;
+    }
+
+    gerarFeedBack = () => {
+
+        let respostaPorCategoria = {};
+        let categoriaList = [];
+        let respostaList = [];
+        let questao = []
+        //identificar categorias e extrair respostas
+        for (let i = 0; i <= this.qtdQuestao; i++) {
+
+            questao = document.querySelector(`#questao-radio-${i}`)
+
+            if (categoriaList.includes(questao.dataset.categoria) == false) {
+                categoriaList.push(questao.dataset.categoria);
+            }
+
+            questao.querySelectorAll('input').forEach((el) => {
+
+                if (el.checked == true) {
+                    respostaList.push({
+                        categoria: questao.dataset.categoria,
+                        resposta: el.value
+                    })
+                }
+            })
+
+        }
+
+        // agrupar respostas por categorias
+        for (let categoria of categoriaList) {
+            respostaPorCategoria[categoria] = []
+            for (let resposta of respostaList) {
+                if (resposta.categoria == categoria) {
+                    respostaPorCategoria[categoria].push(resposta)
+                }
+            }
+        }
+
+        //calcular média
+/*         for(let categoria of categoriaList){
+            respostaPorCategoria[categoria]
+        } */
+
+        //gerar feedback
+    }
+
+    getResposta = (
+        //questao
+        ) => {
+
     }
 }

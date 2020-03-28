@@ -15,21 +15,27 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
-hbs.registerHelper("inc", function (value) {
-  return parseInt(value) + 1;
+hbs.registerHelper("inc", function (value, number) {
+  value = parseInt(value);
+  if (typeof number === "string") {
+    return value + 2;
+  } else {
+    return value + 1;
+  }
+
 });
 
 hbs.registerHelper("get_index", function (element, list) {
+  let result = "menas";
   list.questionarioList.forEach((el, i) => {
     if (el.titulo == element.titulo) {
-      return i;
+      result = i;
     }
   })
+  return result;
 });
 
-hbs.registerHelper('fist', function (list) {
-  return list[0];
-})
+
 //logs
 app.use(logger('dev'));
 
