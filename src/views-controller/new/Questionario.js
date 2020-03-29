@@ -2,8 +2,7 @@ import Animate from '../Animate';
 
 export default class Questionario {
     constructor(qtdQuestao) {
-        //soma-se um pois um elemento é retirado da lista
-        this.qtdQuestao = parseInt(qtdQuestao) + 1;
+        this.qtdQuestao = parseInt(qtdQuestao) - 1;
         this.btnVoltar = document.getElementById('voltar')
         this.btnAvancar = document.getElementById('avancar');
         this.btnFinalizar = document.getElementById('finalizar');
@@ -17,7 +16,7 @@ export default class Questionario {
     alertar = (mensagem) => {
         this.alert.removeAttribute('hidden');
         this.alertMessage.innerHTML = mensagem;
-        window.scroll(this.alertMessage.offsetLeft, this.alertMessage.offsetTop);
+        window.scroll(this.alertMessage.offsetLeft, this.alertMessage.offsetWidth);
 
     }
 
@@ -64,7 +63,7 @@ export default class Questionario {
                 this.acrescentarIndex(questaoIndex);
 
             } else {
-                this.alertar('Atenção, selecione uma alternativa por favor')
+                this.alertar('Atenção, prencha todos os campos ou selecione uma alternativa por favor')
             }
         }
 
@@ -95,13 +94,23 @@ export default class Questionario {
         questao = document
             .getElementById(questao)
             .querySelectorAll('input')
+        if (questaoIndex == 0) {
+            isValid = true;
+            questao
+                .forEach((el) => {
+                    if (el.value.length < 1) {
+                        isValid = false;
+                    }
+                })
+        } else {
 
-        questao
-            .forEach((el) => {
-                if (el.checked) {
-                    isValid = true;
-                }
-            })
+            questao
+                .forEach((el) => {
+                    if (el.checked) {
+                        isValid = true;
+                    }
+                })
+        }
         return isValid;
     }
 

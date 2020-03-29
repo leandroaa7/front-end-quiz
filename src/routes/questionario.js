@@ -4,8 +4,9 @@ var router = express.Router();
 //configurar questoes
 let questionarioList = require('../utils/questoes');
 let first = questionarioList[0];
-questionarioList.shift();
-let total_questao = questionarioList.length - 1;
+//questionarioList.shift();
+//let total_questao = questionarioList.length - 1;
+let total_questao = questionarioList.length;
 
 //configurar recomendação/feedback
 let recomendacaoList = require('../utils/recomendacao');

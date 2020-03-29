@@ -15,7 +15,8 @@
             <div class="card-title section center ">
                 <h6>
                     <b>
-                        Assinale o grau de concordância com as afirmações abaixo (Assinale de 1 discordo totalmente a 7
+                        Preencha todos os campos e assinale o grau de concordância com as afirmações abaixo (Assinale de
+                        1 discordo totalmente a 7
                         concordo totalmente)
                     </b>
                 </h6>
@@ -40,20 +41,36 @@
                 <div class="card-content">
                     <blockquote>
                         <h5>
-                            {{first.titulo}}
+                            Informe a quantidade de funcionários da sua empresa e indique,
+                            aproximadamente, quantos
+                            salários mensais você recebeu a título de remuneração
+                            variável (no último período de avaliação de desempenho)
                         </h5>
                     </blockquote>
 
                     <section id="questao-radio-0" data-categoria="{{first.categoria}}">
-                        {{#each first.alternativa_list}}
-                        <p class="">
-                            <label>
-                                <input name="questao0" value="{{this.peso}}" data-titulo="{{this.titulo}}"
-                                    class="questao0" type="radio" />
-                                <span>{{this.titulo}}</span>
-                            </label>
-                        </p>
-                        {{/each}}
+                        <div id="input-inject">
+
+                            <!-- input funcionario-->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="funcionario" class="active">Quantidade de funcionários</label>
+                                    <input type="number" min="1" max="9999999" id="funcionario"
+                                        placeholder="Quantidade de funcionários" name="funcionario" value=""
+                                        required="">
+                                </div>
+                            </div><!-- input funcionario -->
+
+                            <!-- input salario-->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="salario" class="active">Quantidade de salários</label>
+                                    <input type="number" min="1" max="100" id="salario"
+                                        placeholder="Quantidade de salários" name="salario" value="" required="">
+                                </div>
+                            </div><!-- input salario -->
+
+                        </div>
                     </section>
                 </div><!-- content -->
             </section><!-- questao -->
@@ -61,11 +78,11 @@
 
             {{#each questionarioList}}
             <!-- questao -->
-            <section class="card z-depth-1" id="questao-section-{{inc @index}}" hidden="">
+            <section class="card z-depth-1" id="questao-section-{{@index}}" hidden="">
 
                 <div class="card-title center">
                     <b>
-                        Questão {{inc @index "2"}}
+                        Questão {{inc @index}}
                     </b>
                 </div><!-- title -->
                 <!-- content -->
@@ -76,7 +93,7 @@
                         </h5>
                     </blockquote>
 
-                    <section class="questao-radio" id="questao-radio-{{inc @index}}" data-index="{{inc @index}}"
+                    <section class="questao-radio" id="questao-radio-{{@index}}" data-index="{{@index}}"
                         data-categoria="{{this.categoria}}">
                         {{#each this.alternativa_list}}
                         <p class="">
@@ -129,11 +146,10 @@
         <section class="card-content">
             <!-- title -->
             <div class="card-title section center ">
-                <blockquote class="yellow section">
+                <blockquote class="blue white-text section">
                     <h5>
                         <b>
-                            Atenção, este projeto é um estudo. Ele não substitui
-                            um orientador profissional.
+                            Com base nas suas respostas, a ferramenta sugere que você revise esses pontos
                         </b>
                     </h5>
                 </blockquote>
@@ -144,9 +160,8 @@
 
                 {{#each recomendacaoList}}
                 <!-- FeedBack -->
-                <blockquote class="green white-text section feedback" hidden=""
-                    data-categoria="{{this.categoria}}" data-menor-intervalo="{{this.menor_intervalo}}"
-                    data-maior-intervalo="{{this.maior_intervalo}}">
+                <blockquote class="green white-text section feedback" hidden="" data-categoria="{{this.categoria}}"
+                    data-menor-intervalo="{{this.menor_intervalo}}" data-maior-intervalo="{{this.maior_intervalo}}">
                     <h5>
                         <b>
                             {{this.titulo}}
@@ -154,6 +169,25 @@
                     </h5>
                 </blockquote><!-- FeedBack -->
                 {{/each}}
+
+                <blockquote class="yellow section">
+                    <h5>
+                        <b>
+                            Lembramos que é apenas uma mera sugestão que tem que ser avaliada com maior profundidade por
+                            profissionais especialistas. Obrigado pela participação
+                        </b>
+                    </h5>
+                </blockquote>
+
+                <blockquote class="red darken-3  white-text section">
+                    <h5>
+                        <b>
+                            Projeto com recursos do Mackpesquisa e vinculado ao Programa de Pós-Graduação em
+                            Controladoria e Finanças Empresariais da Universidade Presbiteriana Mackenzie. colocar no
+                            inicio
+                        </b>
+                    </h5>
+                </blockquote>
 
             </div><!-- title -->
 
