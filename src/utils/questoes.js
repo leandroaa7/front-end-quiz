@@ -101,7 +101,7 @@ module.exports = [{
 },
 
 //categoria 3
-/* {
+ {
     titulo: "O meu chefe considera meu desempenho como acima da média.",
     e_alternativa: true,
     peso: 1,
@@ -135,7 +135,7 @@ module.exports = [{
     peso: 1,
     alternativa_list: alternativa_list,
     categoria: "3"
-}, */
+}
 
 
 ]
