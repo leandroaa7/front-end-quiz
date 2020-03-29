@@ -1,5 +1,9 @@
 const alternativa_list = [
     {
+        titulo: "0 - Discordo Totalmente",
+        peso: 0
+    },
+    {
         titulo: "1",
         peso: 1
     },
@@ -24,7 +28,7 @@ const alternativa_list = [
         peso: 6
     },
     {
-        titulo: "7",
+        titulo: "7 - Concordo Totalmente",
         peso: 7
     },
 

@@ -2,13 +2,14 @@ import Animate from '../Animate';
 
 export default class Questionario {
     constructor(qtdQuestao) {
-        this.qtdQuestao = parseInt(qtdQuestao);
-
+        //soma-se um pois um elemento é retirado da lista
+        this.qtdQuestao = parseInt(qtdQuestao) + 1;
         this.btnVoltar = document.getElementById('voltar')
         this.btnAvancar = document.getElementById('avancar');
         this.btnFinalizar = document.getElementById('finalizar');
         this.alert = document.getElementById('alerta');
         this.alertMessage = document.getElementById('alerta-message')
+        this.recomendacaoList = document.querySelectorAll('.feedback');
 
         this.animate = new Animate();
     }
@@ -16,7 +17,8 @@ export default class Questionario {
     alertar = (mensagem) => {
         this.alert.removeAttribute('hidden');
         this.alertMessage.innerHTML = mensagem;
-        window.scroll(0, document.body.scrollHeight);
+        window.scroll(this.alertMessage.offsetLeft, this.alertMessage.offsetTop);
+
     }
 
     ocultarAlerta = () => {
@@ -50,6 +52,8 @@ export default class Questionario {
                 this.btnAvancar.classList.add('hide');
                 this.btnFinalizar.classList.remove('hide');
                 this.alertar("Atenção, as perguntas acabaram, gostaria de finalizar o questionário?")
+                window.scroll(this.btnFinalizar.offsetLeft, this.btnFinalizar.offsetTop);
+
             } else {
                 this.alertar('Atenção, selecione uma alternativa por favor')
             }
@@ -138,17 +142,52 @@ export default class Questionario {
             }
         }
 
+
+
+
+
+        let qtdRespostaCategoria = 0, somaResposta = 0, media = 0,
+            mediaCategoriaList = [];
+
         //calcular média
-/*         for(let categoria of categoriaList){
-            respostaPorCategoria[categoria]
-        } */
+        for (let categoria of categoriaList) {
+            for (let resposta of respostaList) {
+                if (resposta.categoria == categoria) {
+                    qtdRespostaCategoria = qtdRespostaCategoria + 1;
+                    somaResposta = somaResposta + parseInt(resposta.resposta)
+                }
+            }
+            media = somaResposta / qtdRespostaCategoria;
+            mediaCategoriaList.push({
+                categoria: categoria,
+                media: media
+            })
+            media = 0;
+            somaResposta = 0;
+            qtdRespostaCategoria = 0;
+        }
+
+        console.log(mediaCategoriaList)
+
+
+
 
         //gerar feedback
-    }
+        for (let recomendacao of this.recomendacaoList) {
+            for (let media of mediaCategoriaList) {
+                if (recomendacao.dataset.categoria == media.categoria) {
+                    if (media.media >= recomendacao.dataset.menorIntervalo && media.media <= recomendacao.dataset.maiorIntervalo) {
+                        recomendacao.removeAttribute('hidden');
+                    }
+                }
+            }
+        }
 
-    getResposta = (
-        //questao
-        ) => {
+
+        let containerFeedback = document.getElementById('feedback')
+        containerFeedback.removeAttribute('hidden');
+        window.scroll(containerFeedback.offsetLeft, containerFeedback.offsetTop);
+
 
     }
 }
