@@ -6,13 +6,13 @@ module.exports = [
         categoria: 1
     },
     {
-        titulo: "Continue mantendo aquilo que faz você sentir satisfação com o trabalho que executa",
+        titulo: "Mantenha aquilo que faz você sentir satisfação com o trabalho que executa",
         menor_intervalo: 3.6,
         maior_intervalo: 7,
         categoria: 1
     },
     {
-        titulo: "Continue mantendo aquilo que faz você sentir satisfação com o trabalho que executa",
+        titulo: "Executar o seu trabalho é estimulante e isso é considerado um diferencial para o seu desempenho",
         menor_intervalo: 0,
         maior_intervalo: 3.5,
         categoria: 2
